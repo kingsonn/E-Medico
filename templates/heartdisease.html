@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Orbitron:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px;
+            background-color: black;
+            
+        }
+        .navbar{
+            display: flex;
+            background-color: #020c12bd;
+            margin: 0px;
+            padding: 6px;
+        }
+        #logo{
+            width: 50px;
+            
+        }
+        .navbar ul{
+            display: flex;
+            margin: 0px 0px;
+        }
+        .navbar ul li{
+            text-decoration: none;
+            margin: 2px 15px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar div{
+            margin: 0px 0px;
+        }
+        .navbar div h1{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            padding-left: 10px;
+        }
+        .info{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 60px;
+            font-family: 'Cinzel', serif;
+            color:white;
+            padding: 10px 10px;
+        }
+        .navbar::before{
+            background: url('/static/AdobeStock_328915018.jpeg') ;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        #imgg{
+            width: 100%;
+        }
+        .container1, .container2{
+            display: flex;
+
+            
+        }
+        .card{
+            border: solid black;
+            width: 120%;
+            margin: 13px;
+            border-radius: 8px;
+            font-size: 28px;
+            background-color: #020c12bd;
+            color: white;
+            padding: 10px;
+
+        }
+     
+        .infoo{
+            padding: 10px;
+            display: flex;
+
+        }
+        .infoo img{
+            width: 100%;
+        }
+        .infotext{
+            width:100%
+        }
+        .infopic{
+            width: 25%;
+        }
+        .container1::before{
+            background: url('/static/AdobeStock_328915018.jpeg') fixed;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .cardtitle{
+            margin-top: 5px;
+            font-size: 35px;
+            padding-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container1 a, .container2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .forminp div{
+            padding: 10px 10px;
+        }
+        .submitbtn{
+            
+            font-size: 40px;
+            border-radius: 10px;
+            background-color: #1380c169;
+            color: white;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">
+            <img id="logo" src="/Static/symbol-26228_1280.png" alt="">
+        </div> -->
+        <div>
+            <h1>E-Medico: AI for Healthcare</h1>
+        </div>
+        <!-- <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Diagnosis</li>
+                <li>Consultation</li>
+                <li>Contact</li>
+            </ul>
+        </div> -->
+    </nav>
+    <div class="infoo">
+        <div class="infopic">
+            <img src="/static/boy-2027768.png" alt="">
+        </div>
+        
+        <div class="infotext">
+            <div style="padding-bottom: 0px;" class="info"> <u>Heart Disease</u> </div>
+            <div style="padding-top: 0px; font-size: 40px;" class="info">Check your risk for Heart Diseases</div>
+        </div>
+    </div>
+   
+    <!-- <img id="imgg" src="/Static/AdobeStock_328915018.jpeg" alt=""> -->
+    <div style="background-image: url(/static/AdobeStock_328915018.jpeg); background-image: fixed;">
+        <div class="container1">
+            <div style="width: 170%;" class="card">
+                <div class="cardtitle">
+                    <span>Fill the form to check your risk</span>
+                </div>
+                <hr>
+                <div>
+                   <form class="forminp" action="/predictheartdisease" method="post">
+                    <div>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    <div>
+                        <label for="sex">Sex:</label>
+                        <select id="sex"  name="sex" required>
+                          <option disabled selected value> -- Select an Option -- </option>
+                          <option value = "0">Male</option>
+                          <option value = "1">Female</option>
+                        </select>
+                   </div>
+                   <div>
+                    <label for="cp">Chest Pain Type:</label>
+                    <select id="cp" name = "cp" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Typical Angina</option>
+                      <option value = "1">Atypical Angina</option>
+                      <option value = "2">Non-anginal Pain</option>
+                      <option value = "3">Asymptomatic</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="trestbps">Resting Blood Pressure in mm Hg:</label>
+                    <input type="number" id="trestbps" name="trestbps"  required>
+                  </div>
+                  <div>
+                    <label for="chol">Serum Cholestoral in mg/dl:</label>
+                    <input type="number" id="chol" name="chol" required>
+                  </div>
+                  <div>
+                    <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+                    <select id="fbs" name="fbs" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">False</option>
+                      <option value = "1">True</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="restecg">Resting ECG Results: </label>
+                    <select id="restecg" name="restecg" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Normal</option>
+                      <option value = "1">Having ST-T wave abnormality  </option>
+                      <option value = "2"> Probable or definite left ventricular hypertrophy  </option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="thalach">Maximum Heart Rate:</label>
+                    <input type="number" id="thalach" name="thalach" required>
+                  </div>
+                  <div>
+                    <label for="exang">ST Depression Induced:</label>
+                    <input type="number" step="any" id="exang" name="exang" required>
+                  </div>
+                  <div>
+                    <label for="exang">Exercise Induced Angina: </label>
+                    <select id="oldpeak" name="oldpeak" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">No</option>
+                      <option value = "1">Yes</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="slope">Slope of the Peak Exercise ST Segment: </label>
+                    <select id="slope" name="slope" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Upsloping</option>
+                      <option value = "1">Flat</option>
+                      <option value = "2">Downsloping</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="ca">Number of Vessels Colored by Flourosopy:</label>
+                    <select id="ca" name = "ca" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">0</option>
+                      <option value = "1">1</option>
+                      <option value = "2">2</option>
+                      <option value = "3">3</option>
+                    </select>
+                  </div>
+                  <div >
+                    <label for="thal">Thalassemia:</label>
+                    <select  id="thal" name = "thal" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "3">Normal</option>
+                      <option value = "6">Fixed defect</option>
+                      <option value = "7">Reversable defect</option>
+                    </select>
+                  </div>
+                  <div>
+                    <input class="submitbtn" type="submit" value="Submit">
+                  </div>
+                 </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardtitle">
+                <span>About Heart Diseases</span>
+                </div>
+                <hr>
+                <div>
+                    Heart disease describes a range of conditions that affect your heart. Heart diseases include:
+                    <ul>
+                        <li>Blood vessel disease, such as coronary artery disease</li>
+                        <li>Heart rhythm problems (arrhythmias)</li>
+                        <li>Heart defects you're born with (congenital heart defects)</li>
+                        <li>Heart valve disease</li>
+                        <li>Disease of the heart muscle</li>
+                        <li>Heart infection</li>
+                    </ul>
+                    The common symptoms that indicate a heart problem:
+                    <ul>
+                        <li>Angina or chest pain</li>
+                        <li>Difficulty breathing</li>
+                        <li>Fatigue and lightheadedness</li>
+                        <li>Swelling due to fluid retention, or edema</li>
+                        <li>Pain, numbness, weakness or coldness in your legs or arms</li>
+                        <li>Fluttering in your chest</li>
+                    </ul>
+                </div>
+           
+        </div>
+    </div>
+    <div id="copyright" style="background-color: black; color: white; text-align: center;">
+        Copyright &copy; Hanson Braganza. All rights reserved!
+    </div> 
+  
+</html>

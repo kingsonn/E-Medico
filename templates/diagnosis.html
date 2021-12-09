@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Orbitron:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px;
+            background-color: black;
+            
+        }
+        .navbar{
+            display: flex;
+            background-color: #020c12bd;
+            margin: 0px;
+            padding: 6px;
+        }
+        #logo{
+            width: 50px;
+            
+        }
+        .navbar ul{
+            display: flex;
+            margin: 0px 0px;
+        }
+        .navbar ul li{
+            text-decoration: none;
+            margin: 2px 15px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar div{
+            margin: 0px 0px;
+        }
+        .navbar div h1{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            padding-left: 10px;
+        }
+        .info{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 60px;
+            font-family: 'Cinzel', serif;
+            color:white;
+            padding: 10px 10px;
+        }
+        .navbar::before{
+            background: url('/static/AdobeStock_328915018.jpeg') ;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        #imgg{
+            width: 100%;
+        }
+        .container1, .container2{
+            display: flex;
+
+            
+        }
+        .card{
+            border: solid black;
+            width: 100%;
+            margin: 13px;
+            border-radius: 8px;
+            font-size: 28px;
+            background-color: #020c12bd;
+            color: white;
+
+        }
+        .card:hover{
+            background-color: #04304bbd;
+            cursor: pointer;
+        }
+        .infoo{
+            padding: 10px;
+            display: flex;
+
+        }
+        .infoo img{
+            width: 100%;
+        }
+        .infotext{
+            width:100%
+        }
+        .infopic{
+            width: 25%;
+        }
+        .container1::before{
+            background: url('/static/AdobeStock_328915018.jpeg') fixed;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .cardtitle{
+            font-size: 50px;
+            padding-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container1 a, .container2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .cardinfo{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">
+            <img id="logo" src="/Static/symbol-26228_1280.png" alt="">
+        </div> -->
+        <div>
+            <h1>E-Medico: AI for Healthcare</h1>
+        </div>
+        <!-- <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Diagnosis</li>
+                <li>Consultation</li>
+                <li>Contact</li>
+            </ul>
+        </div> -->
+    </nav>
+    <div class="infoo">
+        <div class="infopic">
+            <img src="/static/boy-2027768.png" alt="">
+        </div>
+        
+        <div class="infotext">
+            <div style="padding-bottom: 0px;" class="info">Diagnosis</div>
+            <div style="padding-top: 0px; font-size: 40px;" class="info">Get real time risk prediction for various diseases</div>
+        </div>
+    </div>
+   
+    <!-- <img id="imgg" src="/Static/AdobeStock_328915018.jpeg" alt=""> -->
+    <div style="background-image: url(/static/AdobeStock_328915018.jpeg); background-image: fixed;">
+        <div class="container1">
+           <a href="/heartdisease"> <div class="card">
+                <div class="cardtitle">
+                    <span>Heart Disease</span>
+                </div>
+                <hr>
+                <div class="cardinfo">
+                    Heart disease refers to any condition affecting the cardiovascular system. There are several different types of heart disease, and they affect the heart and blood vessels in different ways. Coronary artery disease, also known as coronary heart disease, is the most common type of heart disease.
+                </div>
+            </a>
+            </div>
+            <a href="/diabetes">
+                <div class="card">
+                    <div class="cardtitle">
+                    <span>Diabetes</span>
+                    </div>
+                    <hr>
+                    <div class="cardinfo">
+                        Diabetes is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn’t make enough insulin or can’t effectively use the insulin it does make. Untreated high blood sugar from diabetes can damage your nerves, eyes, kidneys, and other organs.
+                    </div>
+                </a>
+        
+            </div>
+           
+        </div>
+        <div class="container1">
+            <a href="/breastcancer"> <div class="card">
+                 <div class="cardtitle">
+                     <span>Breast Cancer</span>
+                 </div>
+                 <hr>
+                 <div class="cardinfo">
+                    Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control.
+                    Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump. Breast cancer occurs almost entirely in women, but men can get breast cancer, too. It’s important to understand that most breast lumps are benign and not cancer. Non-cancerous breast tumors are abnormal growths, but they do not spread outside of the breast.
+                 </div>
+             </a>
+             </div>
+             <a href="/kidneydisease">
+                 <div class="card">
+                     <div class="cardtitle">
+                     <span>Kidney Disease</span>
+                     </div>
+                     <hr>
+                     <div class="cardinfo">
+                        Chronic kidney disease, also called chronic kidney failure, involves a gradual loss of kidney function. Your kidneys filter wastes and excess fluids from your blood, which are then removed in your urine. Advanced chronic kidney disease can cause dangerous levels of fluid, electrolytes and wastes to build up in your body. In the early stages of chronic kidney disease, you might have few signs or symptoms. 
+                     </div>
+                 </a>
+         
+             </div>
+            
+         </div>
+        <div class="container2">
+            <a href="/stroke">
+            <div class="card">
+                <div class="cardtitle">
+                    <span>Stroke</span>
+                </div>
+                <hr>
+                <div class="cardinfo">
+                    A stroke occurs when the blood supply to part of your brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients. Brain cells begin to die in minutes. A stroke is a medical emergency, and prompt treatment is crucial. Early action can reduce brain damage and other complications.
+                </div>
+            </a>
+            </div>
+            <a href="/liverdisease">
+            <div class="card">  
+            <div class="cardtitle">
+                <span>Liver Disease</span>
+            </div>
+            <hr>
+            <div class="cardinfo">
+                The liver is an organ about the size of a football. It sits just under your rib cage on the right side of your abdomen. The liver is essential for digesting food and ridding your body of toxic substances. Liver disease can be inherited (genetic). Liver problems can also be caused by a variety of factors that damage the liver, such as viruses, alcohol use and obesity.
+            </div>
+        </a>
+        </div>
+        </div>
+    </div>
+    <div id="copyright" style="background-color: black; color: white; text-align: center;">
+        Copyright &copy; Hanson Braganza. All rights reserved!
+    </div>
+  
+</html>

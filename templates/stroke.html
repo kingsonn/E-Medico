@@ -1,0 +1,275 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stroke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Orbitron:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px;
+            background-color: black;
+            
+        }
+        .navbar{
+            display: flex;
+            background-color: #020c12bd;
+            margin: 0px;
+            padding: 6px;
+        }
+        #logo{
+            width: 50px;
+            
+        }
+        .navbar ul{
+            display: flex;
+            margin: 0px 0px;
+        }
+        .navbar ul li{
+            text-decoration: none;
+            margin: 2px 15px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar div{
+            margin: 0px 0px;
+        }
+        .navbar div h1{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            padding-left: 10px;
+        }
+        .info{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 60px;
+            font-family: 'Cinzel', serif;
+            color:white;
+            padding: 10px 10px;
+        }
+        .navbar::before{
+            background: url('/static/AdobeStock_328915018.jpeg') ;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        #imgg{
+            width: 100%;
+        }
+        .container1, .container2{
+            display: flex;
+
+            
+        }
+        .card{
+            border: solid black;
+            width: 120%;
+            margin: 13px;
+            border-radius: 8px;
+            font-size: 28px;
+            background-color: #020c12bd;
+            color: white;
+            padding: 10px;
+
+        }
+     
+        .infoo{
+            padding: 10px;
+            display: flex;
+
+        }
+        .infoo img{
+            width: 100%;
+        }
+        .infotext{
+            width:100%
+        }
+        .infopic{
+            width: 25%;
+        }
+        .container1::before{
+            background: url('/static/AdobeStock_328915018.jpeg') fixed;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .cardtitle{
+            margin-top: 5px;
+            font-size: 35px;
+            padding-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container1 a, .container2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .forminp div{
+            padding: 10px 10px;
+        }
+        .submitbtn{
+            
+            font-size: 40px;
+            border-radius: 10px;
+            background-color: #1380c169;
+            color: white;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">
+            <img id="logo" src="/Static/symbol-26228_1280.png" alt="">
+        </div> -->
+        <div>
+            <h1>E-Medico: AI for Healthcare</h1>
+        </div>
+        <!-- <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Diagnosis</li>
+                <li>Consultation</li>
+                <li>Contact</li>
+            </ul>
+        </div> -->
+    </nav>
+    <div class="infoo">
+        <div class="infopic">
+            <img src="/static/boy-2027768.png" alt="">
+        </div>
+        
+        <div class="infotext">
+            <div style="padding-bottom: 0px;" class="info"> <u>Stroke</u> </div>
+            <div style="padding-top: 0px; font-size: 40px;" class="info">Check your risk for getting a Stroke</div>
+        </div>
+    </div>
+   
+    <!-- <img id="imgg" src="/Static/AdobeStock_328915018.jpeg" alt=""> -->
+    <div style="background-image: url(/static/AdobeStock_328915018.jpeg); background-image: fixed;">
+        <div class="container1">
+            <div style="width: 170%;" class="card">
+                <div class="cardtitle">
+                    <span>Fill the form to check your risk</span>
+                </div>
+                <hr>
+                <div>
+                   <form class="forminp" action="/predictstroke" method="post">
+                    <div>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    <div>
+                        <label for="gender">Sex:</label>
+                        <select id="gender"  name="gender" required>
+                          <option disabled selected value> -- Select an Option -- </option>
+                          <option value = "0">Male</option>
+                          <option value = "1">Female</option>
+                        </select>
+                   </div>
+                    <div>
+                        <label for="hypertension">Frequent Hypertension:</label>
+                        <select id="hypertension"  name="hypertension" required>
+                          <option disabled selected value> -- Select an Option -- </option>
+                          <option value = "0">Yes</option>
+                          <option value = "1">No</option>
+                        </select>
+                   </div>
+                    <div>
+                        <label for="heart_disease">Heart Disease:</label>
+                        <select id="heart_disease"  name="heart_disease" required>
+                          <option disabled selected value> -- Select an Option -- </option>
+                          <option value = "0">Yes</option>
+                          <option value = "1">No</option>
+                        </select>
+                   </div>
+                    <div>
+                        <label for="ever_married">Ever Married:</label>
+                        <select id="ever_married"  name="ever_married" required>
+                          <option disabled selected value> -- Select an Option -- </option>
+                          <option value = "0">Yes</option>
+                          <option value = "1">No</option>
+                        </select>
+                   </div>
+                   <div>
+                    <label for="work_type">Work Type:</label>
+                    <select id="work_type" name = "work_type" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Goverment Job</option>
+                      <option value = "1">Never Worked</option>
+                      <option value = "2">Private</option>
+                      <option value = "3">Self Employed</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="Residence_type">Residence Type:</label>
+                    <select id="Residence_type"  name="Residence_type" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Urban</option>
+                      <option value = "1">Rural</option>
+                    </select>
+               </div>
+                  <div>
+                    <label for="avg_glucose_level">Average Glucose Level:</label>
+                    <input type="number" id="avg_glucose_level" name="avg_glucose_level"  required>
+                  </div>
+                  <div>
+                    <label for="bmi">Body Mass Index (kg/m²):</label>
+                    <input type="number" id="bmi" name="bmi" required>
+                  </div>
+                  <div>
+                    <label for="smoking_status">Smoking Status</label>
+                    <select id="smoking_status" name="smoking_status" required>
+                      <option disabled selected value> -- Select an Option -- </option>
+                      <option value = "0">Unknown</option>
+                      <option value = "1">Formerly Smoked</option>
+                      <option value = "2">Never Smoked</option>
+                      <option value = "3">Smoker</option>
+                    </select>
+                </div>
+                  <div>
+                    <input class="submitbtn" type="submit" value="Submit">
+                  </div>
+                 </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardtitle">
+                <span>About Stroke</span>
+                </div>
+                <hr>
+                <div>
+                    A stroke occurs when the blood supply to part of your brain is interrupted or reduced, preventing brain tissue from getting oxygen and nutrients. Brain cells begin to die in minutes. If you or someone you're with may be having a stroke, pay particular attention to the time the symptoms began. Some treatment options are most effective when given soon after a stroke begins. <br><br>
+                    Signs and symptoms of stroke include:
+                    <ul>
+                        <li>Trouble speaking and understanding what others are saying</li>
+                        <li>Paralysis or numbness of the face, arm or leg</li>
+                        <li>Problems seeing in one or both eyes</li>
+                        <li>Headache</li>
+                       
+                    </ul>
+                </div>
+           
+        </div>
+    </div>
+    <div id="copyright" style="background-color: black; color: white; text-align: center;">
+        Copyright &copy; Hanson Braganza. All rights reserved!
+    </div>
+  
+</html>

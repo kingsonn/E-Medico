@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Orbitron:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px;
+            background-color: black;
+            
+        }
+        .navbar{
+            display: flex;
+            background-color: #020c12bd;
+            margin: 0px;
+            padding: 6px;
+        }
+        #logo{
+            width: 50px;
+            
+        }
+        .navbar ul{
+            display: flex;
+            margin: 0px 0px;
+        }
+        .navbar ul li{
+            text-decoration: none;
+            margin: 2px 15px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar div{
+            margin: 0px 0px;
+        }
+        .navbar div h1{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            padding-left: 10px;
+        }
+        .info{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 60px;
+            font-family: 'Cinzel', serif;
+            color:white;
+            padding: 10px 10px;
+        }
+        .navbar::before{
+            background: url('/static/AdobeStock_328915018.jpeg') ;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        #imgg{
+            width: 100%;
+        }
+        .container1, .container2{
+            display: flex;
+
+            
+        }
+        .card{
+            border: solid black;
+            width: 120%;
+            margin: 13px;
+            border-radius: 8px;
+            font-size: 28px;
+            background-color: #020c12bd;
+            color: white;
+            padding: 10px;
+
+        }
+     
+        .infoo{
+            padding: 10px;
+            display: flex;
+
+        }
+        .infoo img{
+            width: 100%;
+        }
+        .infotext{
+            width:100%
+        }
+        .infopic{
+            width: 25%;
+        }
+        .container1::before{
+            background: url('/static/AdobeStock_328915018.jpeg') fixed;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .cardtitle{
+            margin-top: 5px;
+            font-size: 35px;
+            padding-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container1 a, .container2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .forminp div{
+            padding: 10px 10px;
+        }
+        .submitbtn{
+            
+            font-size: 40px;
+            border-radius: 10px;
+            background-color: #1380c169;
+            color: white;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">
+            <img id="logo" src="/Static/symbol-26228_1280.png" alt="">
+        </div> -->
+        <div>
+            <h1>E-Medico: AI for Healthcare</h1>
+        </div>
+        <!-- <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Diagnosis</li>
+                <li>Consultation</li>
+                <li>Contact</li>
+            </ul>
+        </div> -->
+    </nav>
+    <div class="infoo">
+        <div class="infopic">
+            <img src="/static/boy-2027768.png" alt="">
+        </div>
+        
+        <div class="infotext">
+            <div style="padding-bottom: 0px;" class="info"> <u>Breast Cancer</u> </div>
+            <div style="padding-top: 0px; font-size: 40px;" class="info">Check your risk for Breast Cancer</div>
+        </div>
+    </div>
+   
+    <!-- <img id="imgg" src="/Static/AdobeStock_328915018.jpeg" alt=""> -->
+    <div style="background-image: url(/static/AdobeStock_328915018.jpeg); background-image: fixed;">
+        <div class="container1">
+            <div style="width: 170%;" class="card">
+                <div class="cardtitle">
+                    <span>Fill the form to check your risk</span>
+                </div>
+                <hr>
+                <div>
+                   <form class="forminp" action="/predictbreastcancer" method="post">
+                    <div>
+                        <label for = "texture_mean">Texture Mean:</label>
+                        <input type= "text" name="texture_mean" placeholder="Value range: 9.71 - 39.28" required>
+                    </div>
+                    <div>
+                        <label for = "area_mean">Area Mean:</label>
+                        <input type="text" name="area_mean" placeholder="Value range: 143.50 - 2501.00" required>
+                    </div>
+                    <div>
+                        <label for = "concavity_mean">Concavity Mean:</label>
+                        <input type="text" name="concavity_mean" placeholder="Value range: 0.00 - 0.43" required>
+                   </div>
+                  <div>
+                    <label for = "area_se">Area SE:</label>
+                    <input type="text" name="area_se" placeholder="Value range: 6.80 - 542.20" required>
+                  </div>
+                  <div>
+                    <label for = "concavity_se">Concavity SE:</label>
+                    <input type="text" name="concavity_se" placeholder="Value range: 0.00 - 0.40" required>
+                  </div>
+                  <div>
+                    <label for = "fractal_dimension_se">Fractal Dimension SE:</label>
+                    <input type="text" name="fractal_dimension_se" placeholder="Value range: 0.00 - 0.03" required>
+                  </div>
+                  <div>
+                    <label for = "smoothness_worst">Smoothness Worst:</label>
+                    <input type="text" name="smoothness_worst" placeholder="Value range: 0.07 - 0.22" required>
+                  </div>
+                  <div>
+                    <label for = "concavity_worst">Concavity Worst:</label>
+                    <input type="text" name="concavity_worst" placeholder="Value range: 0.00 - 1.25" required>
+                  </div>
+                  <div>
+                    <label for = "symmetry_worst">Symmetry Worst:</label>
+                    <input type="text" name="symmetry_worst" placeholder="Value range: 0.16 - 0.66" required>
+                  </div>
+                  <div>
+                    <label for = "fractal_dimension_worst">Fractal Dimension Worst:</label>
+                    <input type="text" name="fractal_dimension_worst" placeholder="Value range: 0.06 - 0.21"  required>
+                  </div>
+                  <div>
+                    <input class="submitbtn" type="submit" value="Submit">
+                  </div>
+                 </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardtitle">
+                <span>About Breast Cancer</span>
+                </div>
+                <hr>
+                <div>
+                    Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control. Breast cancer cells usually form a tumor that can often be seen on an x-ray or felt as a lump.
+                   <br> <br>Signs and symptoms of breast cancer may include:
+                    <ul>
+                        <li>A breast lump or thickening that feels different from the surrounding tissue</li>
+                        <li>Change in the size, shape or appearance of a breast</li>
+                        <li>Changes to the skin over the breast, such as dimpling</li>
+                        <li>A newly inverted nipple</li>
+                        
+                    </ul>
+                </div>
+           
+        </div>
+    </div>
+    <div id="copyright" style="background-color: black; color: white; text-align: center;">
+        Copyright &copy; Hanson Braganza. All rights reserved!
+    </div>
+</body>
+</html>

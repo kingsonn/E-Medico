@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Disease</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@600&family=Orbitron:wght@500&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0px;
+            background-color: black;
+            
+        }
+        .navbar{
+            display: flex;
+            background-color: #020c12bd;
+            margin: 0px;
+            padding: 6px;
+        }
+        #logo{
+            width: 50px;
+            
+        }
+        .navbar ul{
+            display: flex;
+            margin: 0px 0px;
+        }
+        .navbar ul li{
+            text-decoration: none;
+            margin: 2px 15px;
+            list-style: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .navbar div{
+            margin: 0px 0px;
+        }
+        .navbar div h1{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 50px;
+            font-family: 'Orbitron', sans-serif;
+            color:white;
+            padding-left: 10px;
+        }
+        .info{
+            margin: 0px 0px;
+            margin-right: 0px;
+            font-size: 60px;
+            font-family: 'Cinzel', serif;
+            color:white;
+            padding: 10px 10px;
+        }
+        .navbar::before{
+            background: url('/static/AdobeStock_328915018.jpeg') ;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        #imgg{
+            width: 100%;
+        }
+        .container1, .container2{
+            display: flex;
+
+            
+        }
+        .card{
+            border: solid black;
+            width: 120%;
+            margin: 13px;
+            border-radius: 8px;
+            font-size: 28px;
+            background-color: #020c12bd;
+            color: white;
+            padding: 10px;
+
+        }
+     
+        .infoo{
+            padding: 10px;
+            display: flex;
+
+        }
+        .infoo img{
+            width: 100%;
+        }
+        .infotext{
+            width:100%
+        }
+        .infopic{
+            width: 25%;
+        }
+        .container1::before{
+            background: url('/static/AdobeStock_328915018.jpeg') fixed;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        .cardtitle{
+            margin-top: 5px;
+            font-size: 35px;
+            padding-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .container1 a, .container2 a{
+            text-decoration: none;
+            color: white;
+        }
+        .forminp div{
+            padding: 10px 10px;
+        }
+        .submitbtn{
+            
+            font-size: 40px;
+            border-radius: 10px;
+            background-color: #1380c169;
+            color: white;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- <div class="logo">
+            <img id="logo" src="/Static/symbol-26228_1280.png" alt="">
+        </div> -->
+        <div>
+            <h1>E-Medico: AI for Healthcare</h1>
+        </div>
+        <!-- <div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Diagnosis</li>
+                <li>Consultation</li>
+                <li>Contact</li>
+            </ul>
+        </div> -->
+    </nav>
+    <div class="infoo">
+        <div class="infopic">
+            <img src="/static/boy-2027768.png" alt="">
+        </div>
+        
+        <div class="infotext">
+            <div style="padding-bottom: 0px;" class="info"> <u>Kidney Disease</u> </div>
+            <div style="padding-top: 0px; font-size: 40px;" class="info">Check your risk for Kidney Diseases</div>
+        </div>
+    </div>
+   
+    <!-- <img id="imgg" src="/Static/AdobeStock_328915018.jpeg" alt=""> -->
+    <div style="background-image: url(/static/AdobeStock_328915018.jpeg); background-image: fixed;">
+        <div class="container1">
+            <div style="width: 170%;" class="card">
+                <div class="cardtitle">
+                    <span>Fill the form to check your risk</span>
+                </div>
+                <hr>
+                <div>
+                   <form class="forminp" action="/predictkidney" method="post">
+                    <div>
+                        <label for="bp">Blood Pressure:</label>
+                        <input type="number" id="bp" name="Year" required>
+                    </div>
+                    <div>
+                        <label for="sg">Specific Gravity:</label>
+                        <input type="number" step="any" id="sg" name="sg" required>
+                    </div>
+                    <div>
+                        <label for="al">Albumin:</label>
+                        <input type="number" id="al" name="al" required>
+                   </div>
+                  <div>
+                    <label for="su">Blood Sugar Level:</label>
+                    <input type="number" id="su" name="su" required>
+                  </div>
+                  <div>
+                    <label for="rbc">Red Blood Cells Count:</label>
+                    <input type="number" id="rbc" name="rbc" required>
+                  </div>
+                  <div>
+                    <label for="pc">Pus Cell Count:</label>
+                    <input type="number" id="pc" name="pc" required>
+                  </div>
+                  <div>
+                    <label for="pcc">Pus Cell Clumps:</label>
+                    <input type="number" id="pcc" name="pcc" required>
+                  </div>
+                  <div>
+                    <input class="submitbtn" type="submit" value="Submit">
+                  </div>
+                 </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardtitle">
+                <span>About Kidney Diseases</span>
+                </div>
+                <hr>:
+                <div>
+                    Kidneys filter wastes and excess fluids from your blood. Kidney diseases can cause a buildup of fluid or body waste or electrolyte problems. 
+                   <br> <br>Loss of kidney function can cause:
+                    <ul>
+                        <li>High blood pressure</li>
+                        <li>Urinating more or less</li>
+                        <li>Nausea or vomiting</li>
+                        <li>Shortness of breath or chest pain</li>
+                        <li>Decreased mental sharpness</li>
+                        
+                    </ul>
+                </div>
+           
+        </div>
+    </div>
+    <div id="copyright" style="background-color: black; color: white; text-align: center;">
+        Copyright &copy; Hanson Braganza. All rights reserved!
+    </div>
+</body>
+</html>
