@@ -1,6 +1,6 @@
 # E-Medico
 ## Website Link
-emedico.azurewebsites.net
+https://emedico.azurewebsites.net/
 
 ## Video Demonstration
 
